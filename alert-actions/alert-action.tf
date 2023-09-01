@@ -145,3 +145,36 @@ resource "ilert_alert_action" "example_webhook" {
     }
   }
 }
+
+resource "ilert_service" "example" {
+  name = "example"
+}
+
+resource "ilert_alert_action" "example_automation_rule_new" {
+  name = "automation_rule"
+  alert_source {
+    id = ilert_alert_source.example.id
+  }
+  connector {
+    type = "automation_rule"
+  }
+
+  trigger_types = ["alert-created", "alert-acknowledged", "alert-auto-resolved", "alert-resolved"]
+
+  automation_rule {
+    alert_type     = "CREATED"
+    service_ids    = [ilert_service.example.id]
+    service_status = "DEGRADED"
+  }
+}
+
+resource "ilert_automation_rule" "example_automation_rule_old" {
+  alert_type     = "CREATED"
+  service_status = "DEGRADED"
+  service {
+    id = ilert_service.example.id
+  }
+  alert_source {
+    id = ilert_alert_source.example.id
+  }
+}
