@@ -2,6 +2,8 @@
 
 The provided default example in `alert-action.tf` creates a sample user, an escalation policy and an alert source. Additionally, the alert source features three alert actions (email, webhook, GitHub), whereas GitHub additionally connects with a GitHub connector.
 
+For further testing purposes, a deprecated resource automation rule and its new counterpart alert source with type automation rule is also being created in the script.
+
 > Note that those alert actions are provided with example credentials and do not work properly.
 
 ## Setup
