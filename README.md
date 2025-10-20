@@ -8,6 +8,7 @@ A playground with extended examples or plays for ilert's IaaC Monitoring / Alert
 - [Alert action: Microsoft Teams webhook only](alert-action-ms-teams-webhook)
 - [User notification preferences](user_notification_preferences)
 - [Blogpost - Reduce noise: alert source](alert-source-reduce-noise)
+- [Blogpost - Call flows](call-flow-demo)
 
 ## Documentation
 
